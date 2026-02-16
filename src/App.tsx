@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
-import { getData } from "./assets/hooks/useLocalstorage";
+import { getData, setData } from "./assets/hooks/useLocalstorage";
 import Column from "./components/Column";
 import TaskForm from "./components/TaskForm";
 import type { Priority, Status, Task } from "./types/Types";
@@ -9,6 +9,11 @@ function App() {
   const [tasks, setTasks] = useState<Task[]>(() => {
     return getData();
   });
+
+  // Added tasks in localstorage
+  useEffect(() => {
+    setData(tasks);
+  }, [tasks]);
 
   // Tasks added functionality
   const addTask = (title: string, priority: Priority) => {
@@ -36,7 +41,7 @@ function App() {
         </p>
       </header>
       <main className="mt-12">
-        <TaskForm />
+        <TaskForm onAdd={addTask} />
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-3">
           <Column
             title="To Do"
