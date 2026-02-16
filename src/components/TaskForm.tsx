@@ -1,6 +1,7 @@
 import { useRef, useState, type SubmitEvent } from "react";
 import Button from "../utils/Button";
 import type { Priority, Task } from "../types/Types";
+import { getData, setData } from "../assets/hooks/useLocalstorage";
 
 const TaskForm = () => {
   const fromRef = useRef<HTMLFormElement | null>(null);
@@ -21,12 +22,13 @@ const TaskForm = () => {
     };
 
     // Update State and LocalStorage
-    const updatedTasks = [...tasks, newTask];
-    setTasks(updatedTasks);
-
+    const updateTasks = [...tasks, newTask];
+    setTasks(updateTasks);
+    setData(updateTasks);
     fromRef.current.reset();
   };
-  console.log(tasks);
+  // console.log(tasks);
+  console.log(getData());
   return (
     <form
       onSubmit={handleSubmit}
