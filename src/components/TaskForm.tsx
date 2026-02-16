@@ -1,7 +1,7 @@
 import { useRef, useState, type SubmitEvent } from "react";
 import Button from "../utils/Button";
 import type { Priority, Task } from "../types/Types";
-import { getData, setData } from "../assets/hooks/useLocalstorage";
+import { setData } from "../assets/hooks/useLocalstorage";
 
 const TaskForm = () => {
   const fromRef = useRef<HTMLFormElement | null>(null);
@@ -27,8 +27,7 @@ const TaskForm = () => {
     setData(updateTasks);
     fromRef.current.reset();
   };
-  // console.log(tasks);
-  console.log(getData());
+
   return (
     <form
       onSubmit={handleSubmit}
