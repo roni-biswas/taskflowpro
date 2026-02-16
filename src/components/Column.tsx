@@ -1,4 +1,5 @@
 import type { Status, Task } from "../types/Types";
+import TaskCard from "./TaskCard";
 
 interface ColumnTaskProps {
   title: string;
@@ -16,6 +17,11 @@ const Column = ({ title, tasks }: ColumnTaskProps) => {
           <span className="bg-gray-300 text-gray-600 px-2 py-0.5 rounded-full text-xs font-bold">
             {tasks.length}
           </span>
+        </div>
+        <div className="flex flex-col gap-3">
+          {tasks.map((item) => (
+            <TaskCard key={item.id} task={item} />
+          ))}
         </div>
       </div>
     </div>
