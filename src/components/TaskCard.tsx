@@ -1,3 +1,4 @@
+import { useTasks } from "../assets/hooks/useTasks";
 import type { Priority, Task } from "../types/Types";
 import Button from "../utils/Button";
 
@@ -6,6 +7,8 @@ interface TaskCardProps {
 }
 
 const TaskCard = ({ task }: TaskCardProps) => {
+  const { deleteTask } = useTasks();
+
   const priorityStyles: Record<Priority, string> = {
     Low: "border-green-500 bg-green-50",
     Medium: "border-yellow-500 bg-yellow-50",
@@ -18,7 +21,10 @@ const TaskCard = ({ task }: TaskCardProps) => {
     >
       <div className="flex justify-between items-start">
         <h4 className="font-semibold text-gray-800">{task.title}</h4>
-        <button className="text-gray-400 hover:text-red-500 text-sm font-bold">
+        <button
+          onClick={() => deleteTask(task?.id)}
+          className="text-gray-400 hover:text-red-500 text-sm font-bold cursor-pointer"
+        >
           ✕
         </button>
       </div>

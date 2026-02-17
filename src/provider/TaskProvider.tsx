@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
-import { getData, setData } from "../assets/hooks/useLocalstorage";
+import { getData, removeTask, setData } from "../assets/hooks/useLocalstorage";
 import type { Task } from "../types/Types";
 import { TaskContext } from "../assets/hooks/useTasks";
 
@@ -23,8 +23,12 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
     setTasks((prev) => [...prev, newTasks]);
   };
 
+  const deleteTask = (id: string) => {
+    setTasks(removeTask(id));
+  };
+
   return (
-    <TaskContext.Provider value={{ tasks, addTask }}>
+    <TaskContext.Provider value={{ tasks, addTask, deleteTask }}>
       {children}
     </TaskContext.Provider>
   );
