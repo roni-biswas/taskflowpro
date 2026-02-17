@@ -15,4 +15,5 @@ export interface TaskContextType {
   tasks: Task[];
   addTask: (taskData: Omit<Task, "id" | "createdAt">) => void;
   deleteTask: (id: string) => void;
+  updateStatus: (id: string, newStatus: Status) => void;
 }

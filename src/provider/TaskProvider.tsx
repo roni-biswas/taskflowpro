@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { getData, removeTask, setData } from "../assets/hooks/useLocalstorage";
-import type { Task } from "../types/Types";
+import type { Status, Task } from "../types/Types";
 import { TaskContext } from "../assets/hooks/useTasks";
 
 export const TaskProvider = ({ children }: { children: ReactNode }) => {
@@ -27,8 +27,16 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
     setTasks(removeTask(id));
   };
 
+  const updateStatus = (id: string, newStatus: Status) => {
+    setTasks((prev) =>
+      prev.map((task) =>
+        task.id === id ? { ...task, status: newStatus } : task,
+      ),
+    );
+  };
+
   return (
-    <TaskContext.Provider value={{ tasks, addTask, deleteTask }}>
+    <TaskContext.Provider value={{ tasks, addTask, deleteTask, updateStatus }}>
       {children}
     </TaskContext.Provider>
   );
