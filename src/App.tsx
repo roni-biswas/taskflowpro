@@ -1,31 +1,11 @@
-import { useEffect, useState } from "react";
 import "./App.css";
-import { getData, setData } from "./assets/hooks/useLocalstorage";
+import { useTasks } from "./assets/hooks/useTasks";
 import Column from "./components/Column";
 import TaskForm from "./components/TaskForm";
-import type { Priority, Status, Task } from "./types/Types";
+import type { Status } from "./types/Types";
 
 function App() {
-  const [tasks, setTasks] = useState<Task[]>(() => {
-    return getData();
-  });
-
-  // Added tasks in localstorage
-  useEffect(() => {
-    setData(tasks);
-  }, [tasks]);
-
-  // Tasks added functionality
-  const addTask = (title: string, priority: Priority) => {
-    const newTasks: Task = {
-      id: crypto.randomUUID(),
-      title,
-      status: "todo",
-      priority,
-      createdAt: new Date(),
-    };
-    setTasks((prev) => [...prev, newTasks]);
-  };
+  const { tasks } = useTasks();
 
   const getTasksByStatus = (status: Status) =>
     tasks.filter((t) => t.status === status);
@@ -41,7 +21,7 @@ function App() {
         </p>
       </header>
       <main className="mt-12">
-        <TaskForm onAdd={addTask} />
+        <TaskForm />
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-3">
           <Column
             title="To Do"

@@ -10,3 +10,9 @@ export interface Task {
   priority: Priority;
   createdAt?: Date;
 }
+
+export interface TaskContextType {
+  tasks: Task[];
+  addTask: (taskData: Omit<Task, "id" | "createdAt">) => void;
+  // deleteTask: (id: string) => void;
+}

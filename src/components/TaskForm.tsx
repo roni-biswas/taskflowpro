@@ -1,19 +1,21 @@
 import { useState, type SubmitEvent } from "react";
 import Button from "../utils/Button";
 import type { Priority } from "../types/Types";
+import { useTasks } from "../assets/hooks/useTasks";
 
-interface FormProps {
-  onAdd: (title: string, priority: Priority) => void;
-}
-
-const TaskForm = ({ onAdd }: FormProps) => {
+const TaskForm = () => {
+  const { addTask } = useTasks();
   const [title, setTitle] = useState("");
   const [priority, setPriority] = useState<Priority>("Medium");
 
   const handleSubmit = (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!title.trim()) return;
-    onAdd(title, priority);
+    addTask({
+      title,
+      priority,
+      status: "todo",
+    });
     setTitle("");
   };
 
