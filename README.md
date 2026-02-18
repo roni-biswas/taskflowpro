@@ -53,5 +53,5 @@ To get a local copy up and running, follow these steps:
 ### 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/roni-biswas/taskflowpro.git](https://github.com/roni-biswas/taskflowpro.git)
+git clone https://github.com/roni-biswas/taskflowpro.git
 ```
