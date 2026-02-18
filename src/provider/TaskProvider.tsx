@@ -1,7 +1,7 @@
 import { useEffect, useState, type ReactNode } from "react";
-import { getData, removeTask, setData } from "../assets/hooks/useLocalstorage";
+import { getData, removeTask, setData } from "../hooks/useLocalstorage";
 import type { Status, Task } from "../types/Types";
-import { TaskContext } from "../assets/hooks/useTasks";
+import { TaskContext } from "../hooks/useTasks";
 
 export const TaskProvider = ({ children }: { children: ReactNode }) => {
   const [tasks, setTasks] = useState<Task[]>(() => {

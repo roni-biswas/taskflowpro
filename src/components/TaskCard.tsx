@@ -1,4 +1,4 @@
-import { useTasks } from "../assets/hooks/useTasks";
+import { useTasks } from "../hooks/useTasks";
 import type { Priority, Status, Task } from "../types/Types";
 import Button from "../utils/Button";
 

@@ -1,4 +1,4 @@
-import type { Task } from "../../types/Types";
+import type { Task } from "../types/Types";
 
 export const getData = (): Task[] => {
   const getData = localStorage.getItem("data");

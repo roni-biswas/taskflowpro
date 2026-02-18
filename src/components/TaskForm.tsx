@@ -1,7 +1,7 @@
 import { useState, type SubmitEvent } from "react";
 import Button from "../utils/Button";
 import type { Priority } from "../types/Types";
-import { useTasks } from "../assets/hooks/useTasks";
+import { useTasks } from "../hooks/useTasks";
 
 const TaskForm = () => {
   const { addTask } = useTasks();

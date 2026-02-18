@@ -1,5 +1,5 @@
 import "./App.css";
-import { useTasks } from "./assets/hooks/useTasks";
+import { useTasks } from "./hooks/useTasks";
 import Column from "./components/Column";
 import TaskForm from "./components/TaskForm";
 import type { Status } from "./types/Types";
