@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+# 🚀 Taskflow Pro – Enterprise-Grade Task Management
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://taskflowpro-app.vercel.app/)
 
-Currently, two official plugins are available:
+**Taskflow Pro** is a modern, high-performance task management application. The primary goal of this project was to implement a robust architecture using **TypeScript** for strict type-safety and **Vite** for an optimized development workflow.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🔗 Project Links
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Live Demo:** [taskflowpro-app.vercel.app](https://taskflowpro-app.vercel.app/)
+- **GitHub Repo:** [View Source Code](https://github.com/roni-biswas/taskflowpro)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📸 Application Preview
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+![Taskflow Pro Dashboard](https://raw.githubusercontent.com/roni-biswas/taskflowpro/main/public/taskflowpro.png)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## ✨ Key Features
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **✅ Advanced CRUD:** Seamlessly create, update, and manage tasks.
+- **🛡️ Type-Safe Architecture:** Extensive use of TypeScript interfaces and types for predictable code behavior.
+- **⚡ Lightning Fast:** Optimized with Vite's Hot Module Replacement (HMR).
+- **📱 Responsive Design:** Crafting mobile-first experiences using Tailwind CSS utilities.
+- **🎯 Filter & Search:** (Update this if you have search/filter features).
+- **💾 Persistent State:** Data stays intact even after browser refresh (Local Storage).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Technical Stack
+
+| Category             | Technology Used |
+| :------------------- | :-------------- |
+| **Frontend Library** | React 18+       |
+| **Language**         | TypeScript      |
+| **Build Tool**       | Vite            |
+| **Styling**          | Tailwind CSS    |
+| **Deployment**       | Vercel          |
+
+---
+
+## ⚙️ Development Setup
+
+To get a local copy up and running, follow these steps:
+
+### 1. Clone the Repository
+
+```bash
+git clone [https://github.com/roni-biswas/taskflowpro.git](https://github.com/roni-biswas/taskflowpro.git)
 ```
